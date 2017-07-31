@@ -18,8 +18,10 @@ class DeleteAd extends React.Component {
     }
     render() {
         return (
-            <div>
-                Deleting...
+            <div className="container">
+                <div className="content">
+                    Deleting...
+                </div>
             </div>
         );
     }
