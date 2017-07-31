@@ -5,14 +5,12 @@ const webpack = require('webpack'),
     paths = {
         context: devDir,
         output: distDir
-    }
+    },
+    isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
 
 module.exports = {
     context: paths.context,
     entry: devDir + '/app.jsx',
-    // externals: {
-    //     jquery: 'jQuery'
-    // },
     plugins: [
         new webpack.ProvidePlugin({
             $: 'jquery',
@@ -25,13 +23,7 @@ module.exports = {
     },
     resolve: {
         extensions: ['*', '.js', '.jsx'],
-        modules: ['node_modules'],
-        alias: {
-            // applicationStyles: 'app/css/style.css',
-            // actions: 'app/js/dev/actions/actions.jsx',
-            // reducers: 'app/js/dev/reducers/reducers.jsx',
-            // configureStore: 'app/js/dev/store/configureStore.jsx'
-        }
+        modules: ['node_modules']
     },
     module: {
         rules: [
@@ -46,6 +38,6 @@ module.exports = {
             }
         ]
     },
-    devtool: 'cheap-module-eval-source-map',
-    watch: true
+    devtool: isDevelopment ? 'cheap-module-eval-source-map' : false,
+    watch: isDevelopment
 };
