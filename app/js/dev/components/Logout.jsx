@@ -30,7 +30,5 @@ class Logout extends React.Component {
 }
 
 export default connect(
-    (state) => {
-        return state.user
-    }
+    (state) => state.user
 )(Logout);

@@ -192,8 +192,13 @@ form {
 }
 
 .form {
+  margin-bottom: 2rem;
+  -webkit-border-radius: 3px;
+          border-radius: 3px;
   padding: 1.5rem;
   background-color: #fff;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
 }
 .form__buttons {
   padding-top: 1rem;
@@ -233,6 +238,8 @@ form {
 
 .ad-preview {
   margin-bottom: 24px;
+  -webkit-border-radius: 3px;
+          border-radius: 3px;
   padding: 16px;
   background-color: #fff;
   -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
@@ -262,6 +269,7 @@ form {
 }
 .ad-preview__desc {
   margin: 1.5rem 0;
+  line-height: 1.5rem;
 }
 
 .ad {
@@ -283,6 +291,7 @@ form {
 }
 .ad__desc {
   padding: 2rem 0px;
+  line-height: 1.5rem;
 }
 
 .to-main {

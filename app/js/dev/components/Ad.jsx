@@ -20,9 +20,9 @@ class Ad extends React.Component {
                 return null;
             }
 
-            return <Link to={`delete/${id}`}>Delete</Link>
+            return <Link className="button button--default button--raised button--raised_indigo" to={`delete/${id}`}>Delete</Link>
         }
-
+        
         return (
             <div className="container">
                 <div className="content">

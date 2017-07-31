@@ -9,10 +9,10 @@ var adAPI = {
 
         }
 
-        return $.isArray(ads) ? ads : [];
+        return Array.isArray(ads) ? ads : [];
     },
     setAds: function (ads) {
-        if (!$.isArray(ads)) {
+        if (!Array.isArray(ads)) {
             return;
         }
 

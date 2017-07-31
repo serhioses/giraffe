@@ -1,12 +1,4 @@
-// import moment from 'moment';
-
 import userAPI from '../api/userAPI';
-
-// var initialAdsState = {
-//     adsList: [],
-//     totalPages: 1,
-//     currentPage: 1
-// };
 
 export function userReducer (state = userAPI.getLoogedInUser(), action) {
     switch (action.type) {
@@ -40,7 +32,7 @@ export function adsReducer (state = [], action) {
                 id: action.id
             };
 
-            return [...state, ad];
+            return [ad, ...state];
         }
         case 'EDIT_AD': {
             return state.map((ad) => {
@@ -56,7 +48,7 @@ export function adsReducer (state = [], action) {
             });
         }
         case 'ADD_ADS': {
-            return [...state, ...action.ads];
+            return [...action.ads, ...state];
         }
         case 'DELETE_AD': {
             return state.filter((ad) => {
@@ -86,71 +78,3 @@ export function currentPageReducer (state = 1, action) {
 
     return state;
 }
-
-// export function searchTextReducer (state = '', action) {
-//     switch (action.type) {
-//         case 'SET_SEARCH_TEXT': {
-//             return action.searchText;
-//         }
-//     }
-
-//     return state;
-// }
-
-// export function showCompletedReducer (state = false, action) {
-//     switch (action.type) {
-//         case 'TOGGLE_SHOW_COMPLETED': {
-//             return !state;
-//         }
-//     }
-
-//     return state;
-// }
-
-// export function todosReducer (state = [], action) {
-//     switch (action.type) {
-//         case 'ADD_TODO': {
-//             return [
-//                 ...state,
-//                 action.todo
-//             ];
-//         }
-//         case 'ADD_TODOS': {
-//             return [
-//                 ...state,
-//                 ...action.todos
-//             ];
-//         }
-//         // case 'TOGGLE_TODO': {
-//         //     return state.map((todo) => {
-//         //         var nextCompleted;
-
-//         //         if (todo.id === action.id) {
-//         //             nextCompleted = !todo.completed;
-                    
-//         //             return {
-//         //                 ...todo,
-//         //                 completed: nextCompleted,
-//         //                 completedAt: nextCompleted ? moment().unix() : null
-//         //             };
-//         //         }
-
-//         //         return todo;
-//         //     });
-//         // }
-//         case 'UPDATE_TODO': {
-//             return state.map((todo) => {
-//                 if (todo.id === action.id) {
-//                     return {
-//                         ...todo,
-//                         ...action.updates
-//                     };
-//                 }
-
-//                 return todo;
-//             });
-//         }
-//     }
-
-//     return state;
-// }

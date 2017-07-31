@@ -9,10 +9,10 @@ var userAPI = {
 
         }
 
-        return $.isArray(users) ? users : [];
+        return Array.isArray(users) ? users : [];
     },
     setUsers: function (users) {
-        if (!$.isArray(users)) {
+        if (!Array.isArray(users)) {
             return;
         }
 
@@ -68,11 +68,7 @@ var userAPI = {
         }
 
         return null
-    },
-
-    // logInUser: function (user) {
-        
-    // }
+    }
 };
 
 export default userAPI;

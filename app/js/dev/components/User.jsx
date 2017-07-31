@@ -25,7 +25,5 @@ class User extends React.Component {
 }
 
 export default connect(
-    (state) => {
-        return state;
-    }
+    (state) => state
 )(User);
