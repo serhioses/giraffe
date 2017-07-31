@@ -1,7 +1,7 @@
 import * as redux from 'redux';
 import thunk from 'redux-thunk';
 
-import {userReducer, adsReducer} from '../reducers/reducers';
+import {userReducer, adsReducer, totalPagesReducer, currentPageReducer} from '../reducers/reducers';
 
 export default (function () {
     var store;
@@ -15,7 +15,9 @@ export default (function () {
 
         reducer = redux.combineReducers({
             user: userReducer,
-            ads: adsReducer
+            ads: adsReducer,
+            totalPages: totalPagesReducer,
+            currentPage: currentPageReducer
         });
 
         store = redux.createStore(reducer, initialState, redux.compose(

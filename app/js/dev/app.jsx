@@ -14,7 +14,7 @@ import {Provider} from 'react-redux';
 import userAPI from './api/userAPI';
 import adAPI from './api/adAPI';
 
-import {addAds} from './actions/actions';
+import {addAds, updateTotalPages} from './actions/actions';
 import configureStore from './store/configureStore';
 
 var store = configureStore(),
@@ -29,6 +29,7 @@ store.subscribe(() => {
 });
 
 store.dispatch(addAds(initialAds));
+store.dispatch(updateTotalPages(initialAds.length));
 
 // ReactDOM.render(
 //     <Provider store={store}>
@@ -42,6 +43,7 @@ ReactDOM.render(
             <Route path='/' component={Main}>
                 <IndexRoute component={Home}/>
             </Route>
+            <Route path='edit/:id' component={CreateAd} />
             <Route path='edit' component={CreateAd} />
             <Route path='delete/:id' component={DeleteAd} />
             <Route path=':id' component={Ad} />

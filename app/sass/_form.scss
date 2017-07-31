@@ -1,0 +1,39 @@
+// Form
+.form {
+    padding: 1.5rem;
+    background-color: get-color("white");
+    &__buttons {
+        padding-top: 1rem;
+        text-align: right;
+    }
+}
+
+.form-group {
+    padding: 2rem 0 4px;
+}
+
+.form-field {
+    display: block;
+    margin: 0;
+    outline: 0;
+    border: 0;
+    border-bottom: 1px solid get-color("mediumGray");
+    border-radius: 0;
+    width: 100%;
+    height: 1.5rem;
+    padding: 4px 0;
+    background: get-color("white");
+    line-height: 1.5rem;
+    font-size: get-font-size("base");
+    box-shadow: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    &:focus {
+        border-bottom: 2px solid get-color("indigo");
+        padding-bottom: 3px;
+    }
+    &--area {
+        height: 80px;
+    }
+}
+// Form (END)

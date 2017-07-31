@@ -1,0 +1,42 @@
+// Ads
+.ads {
+    &__empty {
+
+    }
+}
+
+.ad-preview {
+    margin-bottom: 24px;
+    padding: 16px;
+    background-color: get-color("white");
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+    &:last-child {
+        margin-bottom: 0;
+    }
+    &__title {
+        margin-bottom: to-rem(12);
+        color: get-color("indigo");
+        font-size: get-font-size("medium");
+        font-weight: bold;
+    }
+    &__author {
+        display: inline-block;
+        vertical-align: baseline;
+        margin-right: 1rem;
+        font-size: get-font-size("small");
+        color: get-color("mediumGray");
+    }
+    &__date {
+        display: inline-block;
+        vertical-align: baseline;
+        font-size: get-font-size("ultraSmall");
+        color: get-color("mediumGray");
+    }
+    &__desc {
+        margin: to-rem(24) 0;
+    }
+    &__buttons {
+        
+    }
+}
+// Ads (END)

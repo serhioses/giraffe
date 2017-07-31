@@ -25,13 +25,17 @@ class Login extends React.Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <div>
-                        <input type="text" placeholder="Name *" required="required" ref="name" />
-                    </div>
-                    <div>
-                        <input type="password" placeholder="Password *" required="required" ref="password" />
-                    </div>
-                    <button type="submit">Send</button>
+                    <fieldset className="form">
+                        <div className="form-group">
+                            <input className="form-field" type="text" placeholder="Name *" required="required" ref="name" />
+                        </div>
+                        <div className="form-group">
+                            <input className="form-field" type="password" placeholder="Password *" required="required" ref="password" />
+                        </div>
+                        <div className="form__buttons">
+                            <button className="button button--default button--raised button--raised_indigo" type="submit">Send</button>
+                        </div>
+                    </fieldset>
                 </form>
             </div>
         );

@@ -10,21 +10,28 @@ class AdList extends React.Component {
         super(props);
     }
     render() {
-        var {ads} = this.props;
+        var {ads, currentPage} = this.props;
 
         function renderAds () {
+            var currentAds;
+
             if (!ads.length) {
-                return <p>There isn't any AD.</p>
+                return <p className="ads__empty">There isn't any Ad.</p>
             }
 
-            return ads.map((ad) => {
+            currentAds = ads.slice((currentPage - 1) * 5, currentPage * 5);
+
+            return currentAds.map((ad) => {
                 return <AdItem key={ad.id} {...ad} />
             });
         }
 
         return (
             <div>
-                {renderAds()}
+                <h1 className="title">Advertisements</h1>
+                <div className="ads">
+                    {renderAds()}
+                </div>
             </div>
         );
     }

@@ -2,7 +2,8 @@ import React from 'react';
 import {hashHistory} from 'react-router';
 import {connect} from 'react-redux';
 
-import {deleteAd} from '../actions/actions';
+import adAPI from '../api/adAPI';
+import {deleteAd, updateTotalPages} from '../actions/actions';
 
 class DeleteAd extends React.Component {
     constructor(props) {
@@ -12,6 +13,7 @@ class DeleteAd extends React.Component {
         var id = this.props.routeParams.id;
 
         this.props.dispatch(deleteAd(this.props.routeParams.id));
+        this.props.dispatch(updateTotalPages(adAPI.getAds().length));
         hashHistory.replace('/');
     }
     render() {
@@ -23,4 +25,6 @@ class DeleteAd extends React.Component {
     }
 }
 
-export default connect()(DeleteAd);
+export default connect(
+    (state) => state
+)(DeleteAd);

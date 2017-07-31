@@ -1,0 +1,14 @@
+// Routine classes
+.link {
+    color: get-color("blue");
+    &:hover {
+        text-decoration: underline;
+    }
+    &--underline {
+        text-decoration: underline;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+// Routine classes (END)

@@ -6,8 +6,12 @@ export default class Main extends React.Component {
     }
     render() {
         return (
-            <div>
-                {this.props.children}
+            <div className="wrapper">
+                <div className="container">
+                    <div className="content">
+                        {this.props.children}
+                    </div>
+                </div>
             </div>
         );
     }

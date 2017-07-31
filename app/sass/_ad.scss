@@ -1,0 +1,30 @@
+// Ad
+.ad {
+    padding: 4rem;
+    background-color: get-color("white");
+    &__author {
+        display: inline-block;
+        vertical-align: baseline;
+        margin-right: to-rem(20);
+        color: get-color("mediumGray");
+        font-size: get-font-size("base");
+    }
+    &__date {
+        display: inline-block;
+        vertical-align: baseline;
+        color: get-color("mediumGray");
+        font-size: get-font-size("small");
+    }
+    &__desc {
+        padding: 2rem 0px;
+    }
+    &__buttons {
+
+    }
+}
+
+.to-main {
+    display: table;
+    margin: 24px auto;
+}
+// Ad (END)

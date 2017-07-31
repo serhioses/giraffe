@@ -16,16 +16,14 @@ class Logout extends React.Component {
     }
     render() {
         return (
-            <div>
-                <h2>
+            <div className="user">
+                <h2 className="user__title">
                     {this.props.name}&nbsp;
-                    <a href="logout" onClick={this.onLogout}>
-                        Log out
+                    <a className="user__logout link link--underline" href="logout" onClick={this.onLogout}>
+                        log out
                     </a>
                 </h2>
-                <p>
-                    <Link to="edit">Create Ad</Link>
-                </p>
+                <Link className="user__create-ad link" to="edit">Create Ad</Link>
             </div>
         );
     }

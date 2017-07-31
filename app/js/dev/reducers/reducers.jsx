@@ -2,6 +2,12 @@
 
 import userAPI from '../api/userAPI';
 
+// var initialAdsState = {
+//     adsList: [],
+//     totalPages: 1,
+//     currentPage: 1
+// };
+
 export function userReducer (state = userAPI.getLoogedInUser(), action) {
     switch (action.type) {
         case 'ADD_USER': {
@@ -36,6 +42,19 @@ export function adsReducer (state = [], action) {
 
             return [...state, ad];
         }
+        case 'EDIT_AD': {
+            return state.map((ad) => {
+                if (+ad.id === +action.id) {
+                    return {
+                        ...ad,
+                        title: action.title,
+                        description: action.description
+                    };
+                }
+
+                return ad;
+            });
+        }
         case 'ADD_ADS': {
             return [...state, ...action.ads];
         }
@@ -43,6 +62,25 @@ export function adsReducer (state = [], action) {
             return state.filter((ad) => {
                 return parseInt(ad.id, 10) !== parseInt(action.id, 10);
             });
+        }
+    }
+
+    return state;
+}
+
+export function totalPagesReducer (state = 1, action) {
+    switch (action.type) {
+        case 'UPDATE_TOTAL_PAGES': {
+            return action.totalPages
+        }
+    }
+    return state;
+}
+
+export function currentPageReducer (state = 1, action) {
+    switch (action.type) {
+        case 'SET_CURRENT_PAGE': {
+            return action.currentPage
         }
     }
 

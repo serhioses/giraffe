@@ -1,0 +1,23 @@
+// User
+.user {
+    margin-bottom: 2rem;
+    border-radius: 3px;
+    padding: 24px;
+    background-color: get-color("white");
+    text-align: center;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+    &__title {
+        margin-bottom: to-rem(16);
+        font-size: get-font-size("big");
+    }
+    &__logout {
+        // color: get-col
+        font-size: get-font-size("small");
+        text-decoration: underline;
+    }
+    &__create-ad {
+        font-size: get-font-size("large");
+        text-transform: uppercase;
+    }
+}
+// User (END)
