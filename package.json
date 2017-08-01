@@ -2,19 +2,32 @@
   "name": "react-ads",
   "version": "0.1.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "karma start"
+  },
   "devDependencies": {
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
+    "deep-freeze-strict": "^1.1.1",
+    "expect": "^1.20.2",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-cssmin": "^0.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-ruby-sass": "^2.1.1",
     "gulp-watch": "^4.3.11",
+    "karma": "^1.7.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-mocha": "^1.3.0",
+    "karma-mocha-reporter": "^2.2.3",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^2.0.4",
+    "mocha": "^3.5.0",
+    "react-addons-test-utils": "^15.6.0",
+    "redux-mock-store": "^1.2.3",
     "webpack": "^2.6.1"
   },
   "dependencies": {

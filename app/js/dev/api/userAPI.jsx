@@ -57,7 +57,7 @@ var userAPI = {
 
         this.setUsers(users);
     },
-    getLoogedInUser: function () {
+    getLoggedInUser: function () {
         var users = this.getUsers(),
             i;
 
@@ -67,7 +67,7 @@ var userAPI = {
             }
         }
 
-        return null
+        return null;
     }
 };
 

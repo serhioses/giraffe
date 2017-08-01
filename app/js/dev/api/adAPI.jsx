@@ -19,9 +19,6 @@ var adAPI = {
         localStorage.setItem('ads', JSON.stringify(ads));
 
         return ads;
-    },
-    addAd: function (ad) {
-        
     }
 };
 

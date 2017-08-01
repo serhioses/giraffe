@@ -1,6 +1,6 @@
 import userAPI from '../api/userAPI';
 
-export function userReducer (state = userAPI.getLoogedInUser(), action) {
+export function userReducer (state = userAPI.getLoggedInUser(), action) {
     switch (action.type) {
         case 'ADD_USER': {
             let user = userAPI.addUser({
