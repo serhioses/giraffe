@@ -15387,10 +15387,14 @@ var DeleteAd = function (_React$Component) {
     _createClass(DeleteAd, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            var id = this.props.routeParams.id;
+            var id = this.props.routeParams.id,
+                response = window.confirm('Confirm deleting the Ad');
 
-            this.props.dispatch((0, _actions.deleteAd)(this.props.routeParams.id));
-            this.props.dispatch((0, _actions.updateTotalPages)(_adAPI2.default.getAds().length));
+            if (response) {
+                this.props.dispatch((0, _actions.deleteAd)(this.props.routeParams.id));
+                this.props.dispatch((0, _actions.updateTotalPages)(_adAPI2.default.getAds().length));
+            }
+
             _reactRouter.hashHistory.replace('/');
         }
     }, {

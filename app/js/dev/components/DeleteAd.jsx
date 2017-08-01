@@ -10,10 +10,14 @@ class DeleteAd extends React.Component {
         super(props);
     }
     componentDidMount() {
-        var id = this.props.routeParams.id;
+        var id = this.props.routeParams.id,
+            response = window.confirm('Confirm deleting the Ad');
 
-        this.props.dispatch(deleteAd(this.props.routeParams.id));
-        this.props.dispatch(updateTotalPages(adAPI.getAds().length));
+        if (response) {
+            this.props.dispatch(deleteAd(this.props.routeParams.id));
+            this.props.dispatch(updateTotalPages(adAPI.getAds().length));
+        }
+
         hashHistory.replace('/');
     }
     render() {
