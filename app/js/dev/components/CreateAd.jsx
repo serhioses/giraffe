@@ -1,5 +1,5 @@
 import React from 'react';
-import {hashHistory} from 'react-router';
+import {browserHistory} from 'react-router';
 import {connect} from 'react-redux';
 
 import adAPI from '../api/adAPI';
@@ -34,7 +34,7 @@ class CreateAd extends React.Component {
 
         this.props.dispatch(updateTotalPages(adAPI.getAds().length));
         
-        hashHistory.push(`/${id}`);
+        browserHistory.push(`/${id}`);
     }
     componentWillMount() {
         var {id} = this.props.params;

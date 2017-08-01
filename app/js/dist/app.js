@@ -15237,7 +15237,7 @@ var CreateAd = function (_React$Component) {
 
             this.props.dispatch((0, _actions.updateTotalPages)(_adAPI2.default.getAds().length));
 
-            _reactRouter.hashHistory.push('/' + id);
+            _reactRouter.browserHistory.push('/' + id);
         }
     }, {
         key: 'componentWillMount',
@@ -15395,7 +15395,7 @@ var DeleteAd = function (_React$Component) {
                 this.props.dispatch((0, _actions.updateTotalPages)(_adAPI2.default.getAds().length));
             }
 
-            _reactRouter.hashHistory.replace('/');
+            _reactRouter.browserHistory.replace('/');
         }
     }, {
         key: 'render',
@@ -15675,7 +15675,7 @@ _reactDom2.default.render(_react2.default.createElement(
     { store: store },
     _react2.default.createElement(
         _reactRouter.Router,
-        { history: _reactRouter.hashHistory },
+        { history: _reactRouter.browserHistory },
         _react2.default.createElement(
             _reactRouter.Route,
             { path: '/', component: _Main2.default },

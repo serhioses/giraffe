@@ -1,5 +1,5 @@
 import React from 'react';
-import {hashHistory} from 'react-router';
+import {browserHistory} from 'react-router';
 import {connect} from 'react-redux';
 
 import adAPI from '../api/adAPI';
@@ -18,7 +18,7 @@ class DeleteAd extends React.Component {
             this.props.dispatch(updateTotalPages(adAPI.getAds().length));
         }
 
-        hashHistory.replace('/');
+        browserHistory.replace('/');
     }
     render() {
         return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router, Route, IndexRoute, hashHistory} from 'react-router';
+import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 import {Provider} from 'react-redux';
 
 import Main from './components/Main';
@@ -32,7 +32,7 @@ store.dispatch(updateTotalPages(initialAds.length));
 
 ReactDOM.render(
     <Provider store={store}>
-        <Router history={hashHistory}>
+        <Router history={browserHistory}>
             <Route path='/' component={Main}>
                 <IndexRoute component={Home}/>
             </Route>
