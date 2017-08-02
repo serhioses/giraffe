@@ -14,7 +14,7 @@ export class CreateAd extends React.Component {
     handleSubmit(e) {
         var title = this.refs.title.value,
             description = this.refs.description.value,
-            id;
+            action, id;
 
         e.preventDefault();
 
@@ -27,12 +27,12 @@ export class CreateAd extends React.Component {
 
             this.props.dispatch(editAd(id, title, description));
         } else {
-            id = Math.round(Math.random() * Date.now());
-            
-            this.props.dispatch(createAd(id, title, description, this.props.user.name, new Date()));
-        }
+            action = createAd(title, description, this.props.user.name);
+            id = action.id;
 
-        this.props.dispatch(updateTotalPages(adAPI.getAds().length));
+            this.props.dispatch(action);
+            this.props.dispatch(updateTotalPages(adAPI.getAds().length));
+        }
         
         browserHistory.push(`/${id}`);
     }

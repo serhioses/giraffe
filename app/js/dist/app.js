@@ -2931,14 +2931,14 @@ function logout() {
     };
 }
 
-function createAd(id, title, description, author, createdAt) {
+function createAd(title, description, author) {
     return {
         type: 'CREATE_AD',
-        id: id,
+        id: Math.round(Math.random() * Date.now()),
         title: title,
         description: description,
         author: author,
-        createdAt: createdAt
+        createdAt: new Date()
     };
 }
 
@@ -15219,6 +15219,7 @@ var CreateAd = exports.CreateAd = function (_React$Component) {
         value: function handleSubmit(e) {
             var title = this.refs.title.value,
                 description = this.refs.description.value,
+                action,
                 id;
 
             e.preventDefault();
@@ -15232,12 +15233,12 @@ var CreateAd = exports.CreateAd = function (_React$Component) {
 
                 this.props.dispatch((0, _actions.editAd)(id, title, description));
             } else {
-                id = Math.round(Math.random() * Date.now());
+                action = (0, _actions.createAd)(title, description, this.props.user.name);
+                id = action.id;
 
-                this.props.dispatch((0, _actions.createAd)(id, title, description, this.props.user.name, new Date()));
+                this.props.dispatch(action);
+                this.props.dispatch((0, _actions.updateTotalPages)(_adAPI2.default.getAds().length));
             }
-
-            this.props.dispatch((0, _actions.updateTotalPages)(_adAPI2.default.getAds().length));
 
             _reactRouter.browserHistory.push('/' + id);
         }

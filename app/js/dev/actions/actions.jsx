@@ -12,14 +12,14 @@ export function logout () {
     };
 }
 
-export function createAd (id, title, description, author, createdAt) {
+export function createAd (title, description, author) {
     return {
         type: 'CREATE_AD',
-        id,
+        id: Math.round(Math.random() * Date.now()),
         title,
         description,
         author,
-        createdAt
+        createdAt: new Date()
     };
 }
 

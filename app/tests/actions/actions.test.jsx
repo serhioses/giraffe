@@ -33,15 +33,16 @@ describe('Actions', () => {
         it('should generate CREATE_AD action', () => {
             var action = {
                 type: 'CREATE_AD',
-                id: 1,
                 title: 'title',
                 description: 'description',
-                author: 'author',
-                createdAt: new Date()
+                author: 'author'
             },
-                result = actions.createAd(action.id, action.title, action.description, action.author, action.createdAt);
+                result = actions.createAd(action.title, action.description, action.author);
 
-            expect(result).toEqual(action);
+            expect(result).toInclude({
+                type: action.type,
+                title: action.title
+            });
         });
 
         it('should generate EDIT_AD action', () => {
