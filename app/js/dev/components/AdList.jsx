@@ -5,7 +5,7 @@ import asAPI from '../api/adAPI';
 
 import AdItem from './AdItem';
 
-class AdList extends React.Component {
+export class AdList extends React.Component {
     constructor(props) {
         super(props);
     }

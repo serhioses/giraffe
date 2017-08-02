@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import adAPI from '../api/adAPI';
 import {deleteAd, updateTotalPages} from '../actions/actions';
 
-class DeleteAd extends React.Component {
+export class DeleteAd extends React.Component {
     constructor(props) {
         super(props);
     }

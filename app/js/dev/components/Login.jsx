@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import {addUser} from '../actions/actions';
 
-class Login extends React.Component {
+export class Login extends React.Component {
     constructor(props) {
         super(props);
 

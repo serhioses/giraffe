@@ -9,12 +9,12 @@ export function userReducer (state = userAPI.getLoggedInUser(), action) {
                 isLoggedIn: true
             });
 
-            return user ? user : null;
+            return user ? user : {};
         }
         case 'LOGOUT': {
             userAPI.logout();
 
-            return null;
+            return {};
         }
     }
 

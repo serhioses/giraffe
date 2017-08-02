@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 
 import {logout} from '../actions/actions';
 
-class Logout extends React.Component {
+export class Logout extends React.Component {
     constructor(props) {
         super(props);
 

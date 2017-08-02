@@ -39,7 +39,7 @@ describe('Actions', () => {
                 author: 'author',
                 createdAt: new Date()
             },
-                result = actions.createAd(action.id, action.title, action.description, action.author);
+                result = actions.createAd(action.id, action.title, action.description, action.author, action.createdAt);
 
             expect(result).toEqual(action);
         });

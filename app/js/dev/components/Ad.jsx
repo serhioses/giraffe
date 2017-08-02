@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router';
 import {connect} from 'react-redux';
 
-class Ad extends React.Component {
+export class Ad extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -16,7 +16,7 @@ class Ad extends React.Component {
             {user} = this.props;
         
         function renderDeleteButton () {
-            if (user && author !== user.name) {
+            if (author !== user.name) {
                 return null;
             }
 

@@ -7,6 +7,10 @@ describe('userAPI', () => {
         window.localStorage.removeItem('users');
     });
 
+    afterEach(() => {
+        window.localStorage.removeItem('users');
+    });
+
     it('should exist', () => {
         expect(userAPI).toExist();
     });
@@ -51,7 +55,7 @@ describe('userAPI', () => {
 
             userAPI.setUsers(users);
 
-            expect(userAPI.addUser({name: 'Serg', password: '112'})).toEqual(null);
+            expect(userAPI.addUser({name: 'Serg', password: '112'})).toEqual({});
         });
 
         it('should leave only one user logged in', () => {
@@ -105,7 +109,7 @@ describe('userAPI', () => {
 
     describe('getLoggedInUser', () => {
         it('should return null if no users in localStorage', () => {
-            expect(userAPI.getLoggedInUser()).toEqual(null);
+            expect(userAPI.getLoggedInUser()).toEqual({});
         });
 
         it('should return logged in user if it exists in localStorage', () => {

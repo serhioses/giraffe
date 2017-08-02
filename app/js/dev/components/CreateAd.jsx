@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import adAPI from '../api/adAPI';
 import {createAd, editAd, updateTotalPages} from '../actions/actions';
 
-class CreateAd extends React.Component {
+export class CreateAd extends React.Component {
     constructor(props) {
         super(props);
 
@@ -28,8 +28,8 @@ class CreateAd extends React.Component {
             this.props.dispatch(editAd(id, title, description));
         } else {
             id = Math.round(Math.random() * Date.now());
-
-            this.props.dispatch(createAd(id, title, description, this.props.user.name));
+            
+            this.props.dispatch(createAd(id, title, description, this.props.user.name, new Date()));
         }
 
         this.props.dispatch(updateTotalPages(adAPI.getAds().length));

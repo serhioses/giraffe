@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import {setCurrentPage} from '../actions/actions';
 
-class Pagination extends React.Component {
+export class Pagination extends React.Component {
     constructor(props) {
         super(props);
 

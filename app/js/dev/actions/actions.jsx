@@ -12,14 +12,14 @@ export function logout () {
     };
 }
 
-export function createAd (id, title, description, author) {
+export function createAd (id, title, description, author, createdAt) {
     return {
         type: 'CREATE_AD',
         id,
         title,
         description,
         author,
-        createdAt: new Date()
+        createdAt
     };
 }
 

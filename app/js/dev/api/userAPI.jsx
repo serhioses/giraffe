@@ -27,7 +27,7 @@ var userAPI = {
         for (i = 0; i < users.length; i += 1) {
             if (users[i].name === user.name) {
                 if (users[i].password !== user.password) {
-                    return null;
+                    return {};
                 }
             }
         }
@@ -67,7 +67,7 @@ var userAPI = {
             }
         }
 
-        return null;
+        return {};
     }
 };
 

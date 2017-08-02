@@ -53,7 +53,7 @@ describe('Reducers', () => {
 
             result = reducers.userReducer(df(userAPI.getLoggedInUser()), df(action));
 
-            expect(result).toEqual(null);
+            expect(result).toEqual({});
         });
 
         it('should log out a user', () => {
@@ -75,7 +75,7 @@ describe('Reducers', () => {
 
             reducers.userReducer(userAPI.getLoggedInUser(), df({type: 'LOGOUT'}));
 
-            expect(userAPI.getLoggedInUser()).toEqual(null);
+            expect(userAPI.getLoggedInUser()).toEqual({});
             expect(userAPI.getUsers()[0].isLoggedIn).toEqual(false);
         });
     });

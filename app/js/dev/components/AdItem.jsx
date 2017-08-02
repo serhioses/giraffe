@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router';
 import {connect} from 'react-redux';
 
-class AdItem extends React.Component {
+export class AdItem extends React.Component {
     constructor(props) {
         super(props);
     }
